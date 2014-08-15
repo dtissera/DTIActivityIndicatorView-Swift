@@ -27,12 +27,6 @@
     self.labelTitle.text = _title;
     self.activityIndicatorView.indicatorStyle = _style;
     [self.activityIndicatorView startActivity];
-    
-    DTIActivityIndicatorView *myActivityIndicatorView = [[DTIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0, 0.0, 80.0, 80.0)];
-    [self.view addSubview:myActivityIndicatorView];
-    myActivityIndicatorView.indicatorColor = [UIColor redColor];
-    myActivityIndicatorView.indicatorStyle = @"chasingDots";
-    [myActivityIndicatorView startActivity];
 }
 
 - (void)dealloc {

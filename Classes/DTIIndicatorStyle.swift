@@ -7,13 +7,14 @@
 //
 
 enum DTIIndicatorStyle {
-    case rotatingPane, chasingDots
+    case rotatingPane, doubleBounce, chasingDots
     
     static let defaultValue = DTIIndicatorStyle.chasingDots
     
     static func conv(value: String) -> DTIIndicatorStyle {
         switch value {
         case "rotatingPane": return .rotatingPane
+        case "doubleBounce": return .doubleBounce
         case "chasingDots": return .chasingDots
         default: return defaultValue
         }
@@ -22,6 +23,7 @@ enum DTIIndicatorStyle {
     static func convInv(value: DTIIndicatorStyle) -> String {
         switch value {
         case .rotatingPane: return "rotatingPane"
+        case .doubleBounce: return "doubleBounce"
         case .chasingDots: return "chasingDots"
         default: return "?"
         }

@@ -43,14 +43,6 @@ class DTIAnimRotatingPlane: DTIAnimProtocol {
     }
 
     func setUp() {
-        // Check control size
-        var f = self.owner.frame;
-        if (f.size.width < 20.0) {
-            f.size.width = 20.0
-        }
-        f.size.height = f.size.width
-        self.owner.frame = f
-        
         self.spinnerView.addSubview(self.planeView)
         //self.spinnerView.layer.shouldRasterize = true
     }

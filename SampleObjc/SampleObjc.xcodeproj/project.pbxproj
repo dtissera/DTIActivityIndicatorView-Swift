@@ -20,6 +20,7 @@
 		256F8330199E45EC00F38D77 /* ContentVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 256F832F199E45EC00F38D77 /* ContentVc.m */; };
 		256F8336199E4C6600F38D77 /* UIColor+DTI.m in Sources */ = {isa = PBXBuildFile; fileRef = 256F8335199E4C6600F38D77 /* UIColor+DTI.m */; };
 		256F833A199E782E00F38D77 /* DTIIndicatorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F8339199E782E00F38D77 /* DTIIndicatorStyle.swift */; };
+		256F833C199EAAC900F38D77 /* DTIAnimDoubleBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F833B199EAAC900F38D77 /* DTIAnimDoubleBounce.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		256F8334199E4C6600F38D77 /* UIColor+DTI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+DTI.h"; path = "../UIColor+DTI.h"; sourceTree = "<group>"; };
 		256F8335199E4C6600F38D77 /* UIColor+DTI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+DTI.m"; path = "../UIColor+DTI.m"; sourceTree = "<group>"; };
 		256F8339199E782E00F38D77 /* DTIIndicatorStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DTIIndicatorStyle.swift; path = ../../Classes/DTIIndicatorStyle.swift; sourceTree = "<group>"; };
+		256F833B199EAAC900F38D77 /* DTIAnimDoubleBounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DTIAnimDoubleBounce.swift; path = ../../Classes/DTIAnimDoubleBounce.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				256F8326199E36CD00F38D77 /* DTIActivityIndicatorView.swift */,
-				256F8327199E36CD00F38D77 /* DTIAnimChasingDots.swift */,
 				256F8328199E36CD00F38D77 /* DTIAnimProtocol.swift */,
+				256F8327199E36CD00F38D77 /* DTIAnimChasingDots.swift */,
+				256F833B199EAAC900F38D77 /* DTIAnimDoubleBounce.swift */,
 				256F8329199E36CD00F38D77 /* DTIAnimRotatingPlane.swift */,
 				256F8339199E782E00F38D77 /* DTIIndicatorStyle.swift */,
 				256F8325199E36CC00F38D77 /* SampleObjc-Bridging-Header.h */,
@@ -260,6 +263,7 @@
 				256F832C199E36CD00F38D77 /* DTIAnimProtocol.swift in Sources */,
 				256F832D199E36CD00F38D77 /* DTIAnimRotatingPlane.swift in Sources */,
 				256F832B199E36CD00F38D77 /* DTIAnimChasingDots.swift in Sources */,
+				256F833C199EAAC900F38D77 /* DTIAnimDoubleBounce.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +455,7 @@
 				256F8320199E364B00F38D77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		256F8321199E364B00F38D77 /* Build configuration list for PBXNativeTarget "SampleObjcTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +464,7 @@
 				256F8323199E364B00F38D77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

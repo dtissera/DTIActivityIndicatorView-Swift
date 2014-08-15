@@ -23,6 +23,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.pages = @[
                    @{@"title": @"Rotating plane", @"color": @"#d35400", @"style": @"rotatingPane"},
+                   @{@"title": @"Double bounce", @"color": @"#2c3e50", @"style": @"doubleBounce"},
                    @{@"title": @"Chasing dots", @"color": @"#f1c40f", @"style": @"chasingDots"}
                    
                    ];

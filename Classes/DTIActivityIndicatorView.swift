@@ -54,8 +54,9 @@ class DTIActivityIndicatorView: UIView {
     private func setUpAnimation() {
         let style = DTIIndicatorStyle(self.indicatorStyle)
         switch style {
-        case .rotatingPane:currentAnimation = DTIAnimRotatingPlane(indicatorView: self)
-        case .chasingDots:currentAnimation = DTIAnimChasingDots(indicatorView: self)
+        case .rotatingPane:self.currentAnimation = DTIAnimRotatingPlane(indicatorView: self)
+        case .doubleBounce:self.currentAnimation = DTIAnimDoubleBounce(indicatorView: self)
+        case .chasingDots:self.currentAnimation = DTIAnimChasingDots(indicatorView: self)
         }
         
         self.setUpColors()
@@ -97,6 +98,14 @@ class DTIActivityIndicatorView: UIView {
             
             CGContextRestoreGState(context)
         }
+    }
+    
+    override func sizeThatFits(size: CGSize) -> CGSize {
+        if (size.width < 20.0) {
+            return CGSize(width: 20.0, height: 20.0)
+        }
+        // force width = height
+        return CGSize(width: size.width, height: size.width)
     }
     
     /** public members */
