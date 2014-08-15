@@ -1,10 +1,5 @@
 !.gitignore
 .DS_Store
-SampleApplication/Build
-SampleApplication/Logs
-SampleApplication/DerivedData
-SampleApplication/Pods
-SampleApplication/Podfile.lock
 xcuserdata
 DerivedData
 project.xcworkspace
