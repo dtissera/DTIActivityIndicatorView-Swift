@@ -2,8 +2,7 @@ DTIActivityIndicatorView
 ========================
 
 Animated custom ActivityIndicator inspired from css library SpinKit. Written in Swift.
-<img src="Shots/rotatingplane.gif"/>
-<img src="Shots/chasingdots.gif"/>
+<img src="Shots/rotatingplane.gif"/> &nbsp; <img src="Shots/chasingdots.gif"/>
 
 ### Installation
 Support for swift project is not yet supported by cocoapod.
@@ -19,6 +18,7 @@ https://github.com/CocoaPods/CocoaPods/issues/2272
 DTIActivityIndicatorView is subclass of UIView. So you can add the instance to some view.
 DTIActivityIndicatorView support storyBoards and new IBDesignable attributes
 
+*swift*
 ```swift
 let myActivityIndicatorView: DTIActivityIndicatorView = DTIActivityIndicatorView(frame: CGRect(x:0.0, y:0.0, width:80.0, height:80.0))
 self.view.addSubview(myActivityIndicatorView)
@@ -27,6 +27,7 @@ myActivityIndicatorView.indicatorStyle = DTIIndicatorStyle.convInv(.chasingDots)
 myActivityIndicatorView.startActivity()
 ```
 
+*objc*
 ```objc
 DTIActivityIndicatorView *myActivityIndicatorView = [[DTIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0, 0.0, 80.0, 80.0)];
 [self.view addSubview:myActivityIndicatorView];
