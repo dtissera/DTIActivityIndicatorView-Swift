@@ -11,11 +11,12 @@ Animated custom ActivityIndicator inspired from css library SpinKit. Written in 
 Support for swift project is not yet supported by cocoapod.
 I will create a podspec file later.
 DTIActivityIndicatorView will be available through [CocoaPods](http://cocoapods.org).
-For instance, you will have to manually copy Classes/* in your project
+For instance, you will have to manually copy Classes/* in your project.
 
 You can see work progress here:
 https://github.com/CocoaPods/CocoaPods/issues/2272
 
+This component require Xcode6-Beta5 to compile.
 
 ### Usage
 DTIActivityIndicatorView is subclass of UIView. So you can add the instance to some view.
