@@ -21,6 +21,7 @@
 		256F8336199E4C6600F38D77 /* UIColor+DTI.m in Sources */ = {isa = PBXBuildFile; fileRef = 256F8335199E4C6600F38D77 /* UIColor+DTI.m */; };
 		256F833A199E782E00F38D77 /* DTIIndicatorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F8339199E782E00F38D77 /* DTIIndicatorStyle.swift */; };
 		256F833C199EAAC900F38D77 /* DTIAnimDoubleBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F833B199EAAC900F38D77 /* DTIAnimDoubleBounce.swift */; };
+		256F833E199EB72700F38D77 /* DTIAnimPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F833D199EB72700F38D77 /* DTIAnimPulse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		256F8335199E4C6600F38D77 /* UIColor+DTI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+DTI.m"; path = "../UIColor+DTI.m"; sourceTree = "<group>"; };
 		256F8339199E782E00F38D77 /* DTIIndicatorStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DTIIndicatorStyle.swift; path = ../../Classes/DTIIndicatorStyle.swift; sourceTree = "<group>"; };
 		256F833B199EAAC900F38D77 /* DTIAnimDoubleBounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DTIAnimDoubleBounce.swift; path = ../../Classes/DTIAnimDoubleBounce.swift; sourceTree = "<group>"; };
+		256F833D199EB72700F38D77 /* DTIAnimPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DTIAnimPulse.swift; path = ../../Classes/DTIAnimPulse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				256F8328199E36CD00F38D77 /* DTIAnimProtocol.swift */,
 				256F8327199E36CD00F38D77 /* DTIAnimChasingDots.swift */,
 				256F833B199EAAC900F38D77 /* DTIAnimDoubleBounce.swift */,
+				256F833D199EB72700F38D77 /* DTIAnimPulse.swift */,
 				256F8329199E36CD00F38D77 /* DTIAnimRotatingPlane.swift */,
 				256F8339199E782E00F38D77 /* DTIIndicatorStyle.swift */,
 				256F8325199E36CC00F38D77 /* SampleObjc-Bridging-Header.h */,
@@ -253,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				256F833E199EB72700F38D77 /* DTIAnimPulse.swift in Sources */,
 				256F830A199E364A00F38D77 /* ViewController.m in Sources */,
 				256F8336199E4C6600F38D77 /* UIColor+DTI.m in Sources */,
 				256F8307199E364A00F38D77 /* AppDelegate.m in Sources */,
