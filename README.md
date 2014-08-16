@@ -7,6 +7,7 @@ Animated custom ActivityIndicator inspired from css library SpinKit. Written in 
 <img src="Shots/wave.gif"/> &nbsp;
 <img src="Shots/pulse.gif"/> &nbsp;
 <img src="Shots/chasingdots.gif"/> &nbsp;
+<img src="Shots/spotify.gif"/> &nbsp;
 
 ### Installation
 Support for swift project is not yet supported by cocoapod.

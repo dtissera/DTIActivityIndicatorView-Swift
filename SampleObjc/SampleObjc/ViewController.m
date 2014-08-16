@@ -26,7 +26,8 @@
                    @{@"title": @"Double bounce", @"color": @"#2c3e50", @"style": @"doubleBounce"},
                    @{@"title": @"Wave", @"color": @"#1abc9c", @"style": @"wave"},
                    @{@"title": @"Chasing dots", @"color": @"#f1c40f", @"style": @"chasingDots"},
-                   @{@"title": @"Pulse", @"color": @"#7f8c8d", @"style": @"pulse"}
+                   @{@"title": @"Pulse", @"color": @"#7f8c8d", @"style": @"pulse"},
+                   @{@"title": @"Spotify", @"color": @"#e0e2e3", @"style": @"spotify"}
                    ];
     
     // Create page view controller

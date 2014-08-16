@@ -26,7 +26,6 @@ class DTIAnimWave: DTIAnimProtocol {
             let layer = CALayer()
             layer.transform = CATransform3DMakeScale(1.0, 0.4, 0.0);
             
-
             self.rectView.layer.addSublayer(layer)
         }
     }
@@ -44,7 +43,6 @@ class DTIAnimWave: DTIAnimProtocol {
 
         for var index = 0; index < rectCount; ++index {
             let rectLayer = self.rectView.layer.sublayers[index] as CALayer
-            let dx: CGFloat = 0;
             rectLayer.frame = CGRect(x: CGFloat(index)*(rectWidth+spaceBetweenRect), y: 0.0, width: rectWidth, height: contentSize.height)
         }
     }
@@ -77,7 +75,6 @@ class DTIAnimWave: DTIAnimProtocol {
             aniScale.repeatCount = HUGE
             aniScale.duration = self.animationDuration
             aniScale.beginTime = beginTime - self.animationDuration + CFTimeInterval(index) * 0.1;
-            println(aniScale.beginTime)
             aniScale.keyTimes = [0.0, 0.2, 0.4, 1.0];
             aniScale.timingFunctions = [
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),

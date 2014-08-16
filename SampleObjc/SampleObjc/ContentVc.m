@@ -27,10 +27,14 @@
     self.labelTitle.text = _title;
     self.activityIndicatorView.indicatorStyle = _style;
     [self.activityIndicatorView startActivity];
+    
+    self.smallActivityIndicatorView.indicatorStyle = _style;
+    [self.smallActivityIndicatorView startActivity];
 }
 
 - (void)dealloc {
     [self.activityIndicatorView stopActivity];
+    [self.smallActivityIndicatorView stopActivity];
 }
 
 #pragma mark - public methods
@@ -47,10 +51,12 @@
 #pragma mark - IBActions
 - (IBAction)actionStart:(id)sender {
     [self.activityIndicatorView startActivity];
+    [self.smallActivityIndicatorView startActivity];
 }
 
 - (IBAction)actionStop:(id)sender {
     [self.activityIndicatorView stopActivity];
+    [self.smallActivityIndicatorView stopActivity];
 }
 
 @end

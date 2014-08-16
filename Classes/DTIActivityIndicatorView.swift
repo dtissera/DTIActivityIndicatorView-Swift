@@ -59,6 +59,7 @@ class DTIActivityIndicatorView: UIView {
         case .wave:self.currentAnimation = DTIAnimWave(indicatorView: self)
         case .chasingDots:self.currentAnimation = DTIAnimChasingDots(indicatorView: self)
         case .pulse:self.currentAnimation = DTIAnimPulse(indicatorView: self)
+        case .spotify:self.currentAnimation = DTIAnimSpotify(indicatorView: self)
         }
         
         self.setUpColors()

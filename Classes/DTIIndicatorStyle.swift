@@ -7,7 +7,7 @@
 //
 
 enum DTIIndicatorStyle {
-    case rotatingPane, doubleBounce, wave, chasingDots, pulse
+    case rotatingPane, doubleBounce, wave, chasingDots, pulse, spotify
     
     static let defaultValue = DTIIndicatorStyle.chasingDots
     
@@ -18,6 +18,7 @@ enum DTIIndicatorStyle {
         case "wave": return .wave
         case "chasingDots": return .chasingDots
         case "pulse": return .pulse
+        case "spotify": return .spotify
         default: return defaultValue
         }
     }
@@ -29,6 +30,7 @@ enum DTIIndicatorStyle {
         case .wave: return "wave"
         case .chasingDots: return "chasingDots"
         case .pulse: return "pulse"
+        case .spotify: return "spotify"
         default: return "?"
         }
     }

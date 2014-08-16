@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet DTIActivityIndicatorView *activityIndicatorView;
+@property (weak, nonatomic) IBOutlet DTIActivityIndicatorView *smallActivityIndicatorView;
 
 @property (nonatomic, readonly) NSUInteger pageIndex;
 

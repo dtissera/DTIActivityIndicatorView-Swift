@@ -23,6 +23,7 @@
 		256F833C199EAAC900F38D77 /* DTIAnimDoubleBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F833B199EAAC900F38D77 /* DTIAnimDoubleBounce.swift */; };
 		256F833E199EB72700F38D77 /* DTIAnimPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F833D199EB72700F38D77 /* DTIAnimPulse.swift */; };
 		256F8340199EC06D00F38D77 /* DTIAnimWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F833F199EC06D00F38D77 /* DTIAnimWave.swift */; };
+		256F8345199EEA3100F38D77 /* DTIAnimSpotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F8344199EEA3100F38D77 /* DTIAnimSpotify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		256F833B199EAAC900F38D77 /* DTIAnimDoubleBounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DTIAnimDoubleBounce.swift; path = ../../Classes/DTIAnimDoubleBounce.swift; sourceTree = "<group>"; };
 		256F833D199EB72700F38D77 /* DTIAnimPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DTIAnimPulse.swift; path = ../../Classes/DTIAnimPulse.swift; sourceTree = "<group>"; };
 		256F833F199EC06D00F38D77 /* DTIAnimWave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DTIAnimWave.swift; path = ../../Classes/DTIAnimWave.swift; sourceTree = "<group>"; };
+		256F8344199EEA3100F38D77 /* DTIAnimSpotify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DTIAnimSpotify.swift; path = ../../Classes/DTIAnimSpotify.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				256F833D199EB72700F38D77 /* DTIAnimPulse.swift */,
 				256F8329199E36CD00F38D77 /* DTIAnimRotatingPlane.swift */,
 				256F833F199EC06D00F38D77 /* DTIAnimWave.swift */,
+				256F8344199EEA3100F38D77 /* DTIAnimSpotify.swift */,
 				256F8339199E782E00F38D77 /* DTIIndicatorStyle.swift */,
 				256F8325199E36CC00F38D77 /* SampleObjc-Bridging-Header.h */,
 			);
@@ -268,6 +271,7 @@
 				256F8304199E364A00F38D77 /* main.m in Sources */,
 				256F832A199E36CD00F38D77 /* DTIActivityIndicatorView.swift in Sources */,
 				256F8340199EC06D00F38D77 /* DTIAnimWave.swift in Sources */,
+				256F8345199EEA3100F38D77 /* DTIAnimSpotify.swift in Sources */,
 				256F832C199E36CD00F38D77 /* DTIAnimProtocol.swift in Sources */,
 				256F832D199E36CD00F38D77 /* DTIAnimRotatingPlane.swift in Sources */,
 				256F832B199E36CD00F38D77 /* DTIAnimChasingDots.swift in Sources */,
