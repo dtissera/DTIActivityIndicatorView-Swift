@@ -56,6 +56,7 @@ class DTIActivityIndicatorView: UIView {
         switch style {
         case .rotatingPane:self.currentAnimation = DTIAnimRotatingPlane(indicatorView: self)
         case .doubleBounce:self.currentAnimation = DTIAnimDoubleBounce(indicatorView: self)
+        case .wave:self.currentAnimation = DTIAnimWave(indicatorView: self)
         case .chasingDots:self.currentAnimation = DTIAnimChasingDots(indicatorView: self)
         case .pulse:self.currentAnimation = DTIAnimPulse(indicatorView: self)
         }

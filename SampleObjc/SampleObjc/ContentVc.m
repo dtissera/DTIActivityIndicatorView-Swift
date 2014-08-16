@@ -44,4 +44,13 @@
     _style = style;
 }
 
+#pragma mark - IBActions
+- (IBAction)actionStart:(id)sender {
+    [self.activityIndicatorView startActivity];
+}
+
+- (IBAction)actionStop:(id)sender {
+    [self.activityIndicatorView stopActivity];
+}
+
 @end

@@ -21,4 +21,7 @@
                          title:(NSString *)title
                          style:(NSString *)style;
 
+- (IBAction)actionStart:(id)sender;
+- (IBAction)actionStop:(id)sender;
+
 @end

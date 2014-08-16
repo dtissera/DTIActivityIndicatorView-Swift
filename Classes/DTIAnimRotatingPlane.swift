@@ -73,5 +73,7 @@ class DTIAnimRotatingPlane: DTIAnimProtocol {
     func stopActivity() {
         self.spinnerView.removeFromSuperview()
         
+        // Remove animations
+        self.spinnerView.layer.removeAllAnimations()
     }
 }
