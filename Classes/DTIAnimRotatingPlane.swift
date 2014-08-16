@@ -70,10 +70,19 @@ class DTIAnimRotatingPlane: DTIAnimProtocol {
         self.spinnerView.layer.addAnimation(anim, forKey: "DTIAnimRotatingPlane~animateCanvas")
     }
     
-    func stopActivity() {
-        self.spinnerView.removeFromSuperview()
+    func stopActivity(animated: Bool) {
+        func removeAnimations() {
+            self.spinnerView.layer.removeAllAnimations()
+            
+            self.spinnerView.removeFromSuperview()
+        }
         
-        // Remove animations
-        self.spinnerView.layer.removeAllAnimations()
+        if (animated) {
+            self.spinnerView.layer.dismissAnimated(removeAnimations)
+        }
+        else {
+            removeAnimations()
+        }
+
     }
 }

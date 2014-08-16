@@ -61,40 +61,49 @@ class DTIAnimDoubleBounce: DTIAnimProtocol {
     func startActivity() {
         self.owner.addSubview(self.spinnerView)
         
-        let aniBounce1 = CAKeyframeAnimation()
-        aniBounce1.keyPath = "transform.scale"
-        aniBounce1.values = [1, 0, 1]
-        aniBounce1.removedOnCompletion = false
-        aniBounce1.repeatCount = HUGE
-        aniBounce1.timingFunctions = [
+        let aniScale1 = CAKeyframeAnimation()
+        aniScale1.keyPath = "transform.scale"
+        aniScale1.values = [1, 0, 1]
+        aniScale1.removedOnCompletion = false
+        aniScale1.repeatCount = HUGE
+        aniScale1.timingFunctions = [
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         ]
-        aniBounce1.duration = self.animationDuration
+        aniScale1.duration = self.animationDuration
         
-        var aniBounce2 = CAKeyframeAnimation()
-        aniBounce2.keyPath = "transform.scale"
-        aniBounce2.values = [0, 1, 0]
-        aniBounce2.removedOnCompletion = false
-        aniBounce2.repeatCount = HUGE
-        aniBounce1.timingFunctions = [
+        var aniScale2 = CAKeyframeAnimation()
+        aniScale2.keyPath = "transform.scale"
+        aniScale2.values = [0, 1, 0]
+        aniScale2.removedOnCompletion = false
+        aniScale2.repeatCount = HUGE
+        aniScale2.timingFunctions = [
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         ]
-        aniBounce2.duration = self.animationDuration
+        aniScale2.duration = self.animationDuration
         
-        self.doubleBounce1View.layer.addAnimation(aniBounce1, forKey: "DTIAnimDoubleBounce~bounce1")
-        self.doubleBounce2View.layer.addAnimation(aniBounce2, forKey: "DTIAnimDoubleBounce~bounce2")
+        self.doubleBounce1View.layer.addAnimation(aniScale1, forKey: "DTIAnimDoubleBounce~aniScale1")
+        self.doubleBounce2View.layer.addAnimation(aniScale2, forKey: "DTIAnimDoubleBounce~aniScale2")
     }
     
-    func stopActivity() {
-        self.spinnerView.removeFromSuperview()
-        
-        // Remove animations
-        self.doubleBounce1View.layer.removeAllAnimations()
-        self.doubleBounce1View.layer.removeAllAnimations()
+    func stopActivity(animated: Bool) {
+        func removeAnimations() {
+            self.spinnerView.layer.removeAllAnimations()
+            self.doubleBounce1View.layer.removeAllAnimations()
+            self.doubleBounce1View.layer.removeAllAnimations()
+            
+            self.spinnerView.removeFromSuperview()
+        }
+
+        if (animated) {
+            self.spinnerView.layer.dismissAnimated(removeAnimations)
+        }
+        else {
+            removeAnimations()
+        }
     }
 
 }

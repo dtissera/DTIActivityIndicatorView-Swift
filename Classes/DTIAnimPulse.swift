@@ -71,10 +71,19 @@ class DTIAnimPulse: DTIAnimProtocol {
         self.pulseView.layer.addAnimation(aniPulseGroup, forKey: "DTIAnimPulse~pulse")
     }
     
-    func stopActivity() {
-        self.spinnerView.removeFromSuperview()
+    func stopActivity(animated: Bool) {
+        func removeAnimations() {
+            self.spinnerView.layer.removeAllAnimations()
+            self.pulseView.layer.removeAllAnimations()
+            
+            self.spinnerView.removeFromSuperview()
+        }
         
-        // Remove animations
-        self.pulseView.layer.removeAllAnimations()
+        if (animated) {
+            self.spinnerView.layer.dismissAnimated(removeAnimations)
+        }
+        else {
+            removeAnimations()
+        }
     }
 }

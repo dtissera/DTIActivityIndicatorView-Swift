@@ -40,7 +40,7 @@ class DTIAnimSpotify: DTIAnimProtocol {
         let posY: CGFloat = (contentSize.height-circleWidth)/2
         
         self.circleView.frame = self.owner.bounds
-        self.spinnerView.layer.cornerRadius = circleWidth/2
+        // self.spinnerView.layer.cornerRadius = circleWidth/2
         
         for var index = 0; index < circleCount; ++index {
             let circleLayer = self.circleView.layer.sublayers[index] as CALayer
@@ -53,7 +53,7 @@ class DTIAnimSpotify: DTIAnimProtocol {
     
     func needUpdateColor() {
         // Debug stuff
-        self.spinnerView.backgroundColor = UIColor.grayColor()
+        // self.spinnerView.backgroundColor = UIColor.grayColor()
 
         for var index = 0; index < circleCount; ++index {
             let circleLayer = self.circleView.layer.sublayers[index] as CALayer
@@ -92,13 +92,23 @@ class DTIAnimSpotify: DTIAnimProtocol {
         }
     }
     
-    func stopActivity() {
-        self.spinnerView.removeFromSuperview()
-        
-        // Remove animations
-        for var index = 0; index < circleCount; ++index {
-            let circleLayer = self.circleView.layer.sublayers[index] as CALayer
-            circleLayer.removeAllAnimations()
+    func stopActivity(animated: Bool) {
+        func removeAnimations() {
+            self.spinnerView.layer.removeAllAnimations()
+            for var index = 0; index < circleCount; ++index {
+                let circleLayer = self.circleView.layer.sublayers[index] as CALayer
+                circleLayer.removeAllAnimations()
+            }
+            
+            self.spinnerView.removeFromSuperview()
         }
+        
+        if (animated) {
+            self.spinnerView.layer.dismissAnimated(removeAnimations)
+        }
+        else {
+            removeAnimations()
+        }
+
     }
 }

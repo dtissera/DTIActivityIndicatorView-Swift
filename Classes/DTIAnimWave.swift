@@ -89,17 +89,28 @@ class DTIAnimWave: DTIAnimProtocol {
                 NSValue(CATransform3D: CATransform3DMakeScale(1.0, 0.4, 0.0))
             ]
             
-            rectLayer.addAnimation(aniScale, forKey: "DTIAnimWave~scale")
+            rectLayer.addAnimation(aniScale, forKey: "DTIAnimWave~scale\(index)")
         }
     }
     
-    func stopActivity() {
-        self.spinnerView.removeFromSuperview()
-        
-        for var index = 0; index < rectCount; ++index {
-            let rectLayer = self.rectView.layer.sublayers[index] as CALayer
-            rectLayer.removeAllAnimations()
+    func stopActivity(animated: Bool) {
+        func removeAnimations() {
+            self.spinnerView.layer.removeAllAnimations()
+            for var index = 0; index < rectCount; ++index {
+                let rectLayer = self.rectView.layer.sublayers[index] as CALayer
+                rectLayer.removeAllAnimations()
+            }
+            
+            self.spinnerView.removeFromSuperview()
         }
+        
+        if (animated) {
+            self.spinnerView.layer.dismissAnimated(removeAnimations)
+        }
+        else {
+            removeAnimations()
+        }
+
     }
     
 }

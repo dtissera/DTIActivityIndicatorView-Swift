@@ -14,5 +14,5 @@ protocol DTIAnimProtocol {
     func setUp()
 
     func startActivity()
-    func stopActivity()
+    func stopActivity(animated: Bool)
 }

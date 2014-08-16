@@ -72,41 +72,49 @@ class DTIAnimChasingDots: DTIAnimProtocol {
         aniRot.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         aniRot.duration = self.animationDuration
         
-        let aniBounce1 = CAKeyframeAnimation()
-        aniBounce1.keyPath = "transform.scale"
-        aniBounce1.values = [1, 0, 1]
-        aniBounce1.removedOnCompletion = false
-        aniBounce1.repeatCount = HUGE
-        aniBounce1.timingFunctions = [
+        let aniScale1 = CAKeyframeAnimation()
+        aniScale1.keyPath = "transform.scale"
+        aniScale1.values = [1, 0, 1]
+        aniScale1.removedOnCompletion = false
+        aniScale1.repeatCount = HUGE
+        aniScale1.timingFunctions = [
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         ]
-        aniBounce1.duration = self.animationDuration
+        aniScale1.duration = self.animationDuration
         
-        var aniBounce2 = CAKeyframeAnimation()
-        aniBounce2.keyPath = "transform.scale"
-        aniBounce2.values = [0, 1, 0]
-        aniBounce2.removedOnCompletion = false
-        aniBounce2.repeatCount = HUGE
-        aniBounce2.timingFunctions = [
+        var aniScale2 = CAKeyframeAnimation()
+        aniScale2.keyPath = "transform.scale"
+        aniScale2.values = [0, 1, 0]
+        aniScale2.removedOnCompletion = false
+        aniScale2.repeatCount = HUGE
+        aniScale2.timingFunctions = [
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
             CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         ]
-        aniBounce2.duration = self.animationDuration
+        aniScale2.duration = self.animationDuration
         
-        self.spinnerView.layer.addAnimation(aniRot, forKey: "DTIAnimChasingDots~rotateCanvas")
-        self.dot1View.layer.addAnimation(aniBounce1, forKey: "DTIAnimChasingDots~scaleDot1")
-        self.dot2View.layer.addAnimation(aniBounce2, forKey: "DTIAnimChasingDots~scaleDot2")
+        self.spinnerView.layer.addAnimation(aniRot, forKey: "DTIAnimChasingDots~aniRot")
+        self.dot1View.layer.addAnimation(aniScale1, forKey: "DTIAnimChasingDots~aniScale1")
+        self.dot2View.layer.addAnimation(aniScale2, forKey: "DTIAnimChasingDots~aniScale2")
     }
     
-    func stopActivity() {
-        self.spinnerView.removeFromSuperview()
+    func stopActivity(animated: Bool) {
+        func removeAnimations() {
+            self.spinnerView.layer.removeAllAnimations()
+            self.dot1View.layer.removeAllAnimations()
+            self.dot2View.layer.removeAllAnimations()
+            
+            self.spinnerView.removeFromSuperview()
+        }
         
-        // Remove animations
-        self.spinnerView.layer.removeAllAnimations()
-        self.dot1View.layer.removeAllAnimations()
-        self.dot2View.layer.removeAllAnimations()
+        if (animated) {
+            self.spinnerView.layer.dismissAnimated(removeAnimations)
+        }
+        else {
+            removeAnimations()
+        }
     }
 }

@@ -46,7 +46,7 @@ class DTIActivityIndicatorView: UIView {
     
     deinit {
         if (self.activityStarted) {
-            self.stopActivity()
+            self.stopActivity(false)
         }
     }
 
@@ -123,12 +123,18 @@ class DTIActivityIndicatorView: UIView {
         currentAnimation!.startActivity()
     }
 
-    func stopActivity() {
+    func stopActivity(animated: Bool) {
         if (!self.activityStarted) {
             return
         }
-
+        
         self.activityStarted = false;
-        currentAnimation!.stopActivity()
+        currentAnimation!.stopActivity(animated)
     }
+
+    func stopActivity() {
+        self.stopActivity(true)
+    }
+    
+
 }
