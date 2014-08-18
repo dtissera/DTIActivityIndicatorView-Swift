@@ -1,13 +1,16 @@
 DTIActivityIndicatorView
 ========================
 
-Animated custom ActivityIndicator inspired from css library SpinKit. Written in Swift.
+Animated custom ActivityIndicator inspired from css library SpinKit and much more... 
+Written in Swift.
+
 <img src="Shots/rotatingplane.gif"/> &nbsp; 
 <img src="Shots/doublebounce.gif"/> &nbsp;
 <img src="Shots/wave.gif"/> &nbsp;
 <img src="Shots/pulse.gif"/> &nbsp;
 <img src="Shots/chasingdots.gif"/> &nbsp;
 <img src="Shots/spotify.gif"/> &nbsp;
+<img src="Shots/wp8.gif"/> &nbsp;
 
 ### Installation
 Support for swift project is not yet supported by cocoapod.
