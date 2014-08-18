@@ -27,7 +27,8 @@
                    @{@"title": @"Wave", @"color": @"#1abc9c", @"style": @"wave"},
                    @{@"title": @"Chasing dots", @"color": @"#f1c40f", @"style": @"chasingDots"},
                    @{@"title": @"Pulse", @"color": @"#7f8c8d", @"style": @"pulse"},
-                   @{@"title": @"Spotify", @"color": @"#e0e2e3", @"style": @"spotify"}
+                   @{@"title": @"Spotify", @"color": @"#e0e2e3", @"style": @"spotify"},
+                   @{@"title": @"Wp8", @"color": @"#1d8fd5", @"style": @"wp8"}
                    ];
     
     // Create page view controller
@@ -47,6 +48,11 @@
     // Change the size of page view controller
     self.pageViewController.view.frame = self.view.bounds;
     [self.pageViewController didMoveToParentViewController:self];
+    
+    /*
+     debug only
+    [self.pageViewController setViewControllers:@[[self viewControllerAtIndex:6]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+     */
 }
 
 #pragma mark - private methods

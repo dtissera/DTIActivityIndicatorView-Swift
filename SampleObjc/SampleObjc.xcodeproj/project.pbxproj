@@ -25,6 +25,7 @@
 		256F8340199EC06D00F38D77 /* DTIAnimWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F833F199EC06D00F38D77 /* DTIAnimWave.swift */; };
 		256F8345199EEA3100F38D77 /* DTIAnimSpotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F8344199EEA3100F38D77 /* DTIAnimSpotify.swift */; };
 		256F834719A0033300F38D77 /* CALayer+DTI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F834619A0033300F38D77 /* CALayer+DTI.swift */; };
+		256F834919A09ED700F38D77 /* DTIAnimWp8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F834819A09ED700F38D77 /* DTIAnimWp8.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		256F833F199EC06D00F38D77 /* DTIAnimWave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DTIAnimWave.swift; path = ../../Classes/DTIAnimWave.swift; sourceTree = "<group>"; };
 		256F8344199EEA3100F38D77 /* DTIAnimSpotify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DTIAnimSpotify.swift; path = ../../Classes/DTIAnimSpotify.swift; sourceTree = "<group>"; };
 		256F834619A0033300F38D77 /* CALayer+DTI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+DTI.swift"; sourceTree = "<group>"; };
+		256F834819A09ED700F38D77 /* DTIAnimWp8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DTIAnimWp8.swift; path = ../../Classes/DTIAnimWp8.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				256F8329199E36CD00F38D77 /* DTIAnimRotatingPlane.swift */,
 				256F833F199EC06D00F38D77 /* DTIAnimWave.swift */,
 				256F8344199EEA3100F38D77 /* DTIAnimSpotify.swift */,
+				256F834819A09ED700F38D77 /* DTIAnimWp8.swift */,
 				256F8339199E782E00F38D77 /* DTIIndicatorStyle.swift */,
 				256F834619A0033300F38D77 /* CALayer+DTI.swift */,
 				256F8325199E36CC00F38D77 /* SampleObjc-Bridging-Header.h */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				256F834919A09ED700F38D77 /* DTIAnimWp8.swift in Sources */,
 				256F833E199EB72700F38D77 /* DTIAnimPulse.swift in Sources */,
 				256F830A199E364A00F38D77 /* ViewController.m in Sources */,
 				256F8336199E4C6600F38D77 /* UIColor+DTI.m in Sources */,
