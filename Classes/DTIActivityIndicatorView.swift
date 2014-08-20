@@ -121,6 +121,8 @@ class DTIActivityIndicatorView: UIView {
         
         self.activityStarted = true
         self.setUpAnimation()
+        
+        currentAnimation!.needLayoutSubviews()
         currentAnimation!.setUp()
         currentAnimation!.startActivity()
     }

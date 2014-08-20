@@ -58,7 +58,6 @@ class DTIAnimWanderingCubes: DTIAnimProtocol {
     }
     
     func startActivity() {
-        self.needLayoutSubviews()
         self.owner.addSubview(self.spinnerView)
         
         let beginTime = CACurrentMediaTime();
