@@ -15,7 +15,7 @@ class DTIAnimWp8: DTIAnimProtocol {
     
     private let spinnerView = UIView()
     private let ballCount = 5
-    private let animationDuration = CFTimeInterval(7.15*1.0)
+    private let animationDuration = CFTimeInterval(7.15)
     
     /** ctor */
     init(indicatorView: DTIActivityIndicatorView) {

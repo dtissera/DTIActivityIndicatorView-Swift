@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2506B15719A40FE600481F30 /* DTIAnimWanderingCubes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2506B15619A40FE600481F30 /* DTIAnimWanderingCubes.swift */; };
 		256F8304199E364A00F38D77 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 256F8303199E364A00F38D77 /* main.m */; };
 		256F8307199E364A00F38D77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256F8306199E364A00F38D77 /* AppDelegate.m */; };
 		256F830A199E364A00F38D77 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 256F8309199E364A00F38D77 /* ViewController.m */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2506B15619A40FE600481F30 /* DTIAnimWanderingCubes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DTIAnimWanderingCubes.swift; path = ../../Classes/DTIAnimWanderingCubes.swift; sourceTree = "<group>"; };
 		256F82FE199E364A00F38D77 /* SampleObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		256F8302199E364A00F38D77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		256F8303199E364A00F38D77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				256F833D199EB72700F38D77 /* DTIAnimPulse.swift */,
 				256F8329199E36CD00F38D77 /* DTIAnimRotatingPlane.swift */,
 				256F833F199EC06D00F38D77 /* DTIAnimWave.swift */,
+				2506B15619A40FE600481F30 /* DTIAnimWanderingCubes.swift */,
 				256F8344199EEA3100F38D77 /* DTIAnimSpotify.swift */,
 				256F834819A09ED700F38D77 /* DTIAnimWp8.swift */,
 				256F8339199E782E00F38D77 /* DTIIndicatorStyle.swift */,
@@ -278,6 +281,7 @@
 				256F8304199E364A00F38D77 /* main.m in Sources */,
 				256F832A199E36CD00F38D77 /* DTIActivityIndicatorView.swift in Sources */,
 				256F8340199EC06D00F38D77 /* DTIAnimWave.swift in Sources */,
+				2506B15719A40FE600481F30 /* DTIAnimWanderingCubes.swift in Sources */,
 				256F8345199EEA3100F38D77 /* DTIAnimSpotify.swift in Sources */,
 				256F832C199E36CD00F38D77 /* DTIAnimProtocol.swift in Sources */,
 				256F834719A0033300F38D77 /* CALayer+DTI.swift in Sources */,
