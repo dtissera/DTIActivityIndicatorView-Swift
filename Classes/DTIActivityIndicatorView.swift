@@ -49,10 +49,12 @@ class DTIActivityIndicatorView: UIView {
             self.stopActivity(false)
         }
     }
-
+    
     /** private members */
     private func setUpAnimation() {
-        let style = DTIIndicatorStyle(self.indicatorStyle)
+        
+        let style = DTIIndicatorStyle.conv(self.indicatorStyle)
+        
         switch style {
         case .rotatingPane:self.currentAnimation = DTIAnimRotatingPlane(indicatorView: self)
         case .doubleBounce:self.currentAnimation = DTIAnimDoubleBounce(indicatorView: self)
