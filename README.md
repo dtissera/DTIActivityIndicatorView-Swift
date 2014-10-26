@@ -22,7 +22,7 @@ For instance, you will have to manually copy Classes/* in your project.
 You can see work progress here:
 https://github.com/CocoaPods/CocoaPods/issues/2272
 
-This component require **Xcode6-Beta6** to compile.
+This component require **Xcode6.1** to compile.
 
 ### Usage
 DTIActivityIndicatorView is subclass of UIView. So you can add the instance to some view.
