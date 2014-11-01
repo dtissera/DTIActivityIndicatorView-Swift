@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SampleObjc-Swift.h"
+#import <DTIActivityIndicator/DTIActivityIndicator-Swift.h>
 
 @interface ContentVc : UIViewController
 

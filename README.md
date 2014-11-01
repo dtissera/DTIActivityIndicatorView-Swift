@@ -4,6 +4,9 @@ DTIActivityIndicatorView
 Animated custom ActivityIndicator inspired from css library SpinKit and much more... 
 Written in Swift.
 
+- DTIActivityIndicatorView can be called from both swift or objc project.
+- This component require **Xcode6.1** to compile.
+
 <img src="Shots/rotatingplane.gif"/> &nbsp; 
 <img src="Shots/doublebounce.gif"/> &nbsp;
 <img src="Shots/wave.gif"/> &nbsp;
@@ -14,15 +17,20 @@ Written in Swift.
 <img src="Shots/wp8.gif"/> &nbsp;
 
 ### Installation
-Support for swift project is not yet supported by cocoapod.
-I will create a podspec file later.
-DTIActivityIndicatorView will be available through [CocoaPods](http://cocoapods.org).
-For instance, you will have to manually copy Classes/* in your project.
+> For application targets that do not support embedded frameworks, such as iOS 7, DTIActivityIndicator can be integrated by including the `*.swift` source files directly.
 
-You can see work progress here:
-https://github.com/CocoaPods/CocoaPods/issues/2272
+_Due to the current lack of [proper infrastructure](http://cocoapods.org) for Swift dependency management, using DTIActivityIndicator in your project requires the following steps:_
 
-This component require **Xcode6.1** to compile.
+1. Add DTIActivityIndicator as a [submodule](http://git-scm.com/docs/git-submodule) by opening the Terminal, `cd`-ing into your top-level project directory, and entering the command `git submodule add https://github.com/dtissera/DTIActivityIndicatorView-Swift.git`
+2. Open the `DTIActivityIndicator` folder, and drag `DTIActivityIndicator.xcodeproj` into the file navigator of your app project.
+3. In Xcode, navigate to the target configuration window by clicking on the blue project icon, and selecting the application target under the "Targets" heading in the sidebar.
+4. Ensure that the deployment target of DTIActivityIndicator.framework matches that of the application target.
+5. In the tab bar at the top of that window, open the "Build Phases" panel.
+6. Expand the "Target Dependencies" group, and add `DTIActivityIndicator.framework`.
+7. Click on the `+` button at the top left of the panel and select "New Copy Files Phase". Rename this new phase to "Copy Frameworks", set the "Destination" to "Frameworks", and add `DTIActivityIndicator.framework`.
+8. If you are using this component in an `objc target`, flag ```Embedded Content Contains Swift Code``` in the `Build Settings` needs to be set to `YES`.
+
+---
 
 ### Usage
 DTIActivityIndicatorView is subclass of UIView. So you can add the instance to some view.

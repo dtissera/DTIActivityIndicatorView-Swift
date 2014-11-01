@@ -1,9 +1,9 @@
 //
 //  ViewController.m
-//  SampleObjc
+//  DTIActivityIndicatorExemple-objc
 //
-//  Created by dtissera on 15/08/2014.
-//  Copyright (c) 2014 o--O--o. All rights reserved.
+//  Created by David Tisserand on 01/11/2014.
+//  Copyright (c) 2014 dtissera. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -17,7 +17,7 @@
 @end
 
 @implementation ViewController
-            
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -40,19 +40,23 @@
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
-    // Change the size of page view controller
-    //self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    //self.pageViewController.view.frame = self.view.bounds;
-    
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
-    // Change the size of page view controller
-    self.pageViewController.view.frame = self.view.bounds;
     [self.pageViewController didMoveToParentViewController:self];
     
+    // Auto layout
+    self.pageViewController.view.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    // Create the views dictionaries
+    UIView *pv = self.pageViewController.view;
+    
+    NSDictionary *views = NSDictionaryOfVariableBindings(pv);
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[pv]-0-|" options:0 metrics:0 views:views]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[pv]-0-|" options:0 metrics:0 views:views]];
+
     /*
      debug only
-    [self.pageViewController setViewControllers:@[[self viewControllerAtIndex:6]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+     [self.pageViewController setViewControllers:@[[self viewControllerAtIndex:6]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
      */
 }
 
@@ -102,12 +106,5 @@
     return [self viewControllerAtIndex:index];
 }
 
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    return [self.pages count];
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-    return 0;
-}
-
 @end
+

@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  SampleObjc
+//  DTIActivityIndicatorExemple-objc
 //
-//  Created by dtissera on 15/08/2014.
-//  Copyright (c) 2014 o--O--o. All rights reserved.
+//  Created by David Tisserand on 01/11/2014.
+//  Copyright (c) 2014 dtissera. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -13,18 +13,10 @@
 @end
 
 @implementation AppDelegate
-            
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    /*
-    UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
-    pageControl.backgroundColor = [UIColor clearColor];
-    pageControl.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.5f];
-     */
-    
     return YES;
 }
 

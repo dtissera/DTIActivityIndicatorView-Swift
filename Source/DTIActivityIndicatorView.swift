@@ -11,7 +11,7 @@ import Foundation
 
 @IBDesignable
 @objc
-class DTIActivityIndicatorView: UIView {
+public class DTIActivityIndicatorView: UIView {
     // warning unlike objc, we dont have TARGET_INTERFACE_BUILDER macro in swift !
     // this variable as the right value only after prepareForInterfaceBuilder()
     // is called
@@ -25,7 +25,7 @@ class DTIActivityIndicatorView: UIView {
     private var currentAnimation: DTIAnimProtocol? = nil
     
     /** @IBInspectable properties */
-    @IBInspectable var indicatorColor: UIColor = UIColor.whiteColor() {
+    @IBInspectable public var indicatorColor: UIColor = UIColor.whiteColor() {
         didSet {
             if (self.currentAnimation != nil) {
                 self.currentAnimation!.needUpdateColor()
@@ -33,14 +33,14 @@ class DTIActivityIndicatorView: UIView {
         }
     }
     
-    @IBInspectable var indicatorStyle: String = DTIIndicatorStyle.convInv(.defaultValue)
+    @IBInspectable public var indicatorStyle: String = DTIIndicatorStyle.convInv(.defaultValue)
     
     /** ctor && ~ctor */
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame);
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -52,7 +52,6 @@ class DTIActivityIndicatorView: UIView {
     
     /** private members */
     private func setUpAnimation() {
-        
         let style = DTIIndicatorStyle.conv(self.indicatorStyle)
         
         switch style {
@@ -78,20 +77,20 @@ class DTIActivityIndicatorView: UIView {
     }
     
     /** overrides */
-    override func prepareForInterfaceBuilder() {
+    override public func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         self.runningWithinInterfaceBuilder = true
         
         setUpColors();
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         if (self.currentAnimation != nil) {
             currentAnimation!.needLayoutSubviews()
         }
     }
 
-    override func drawRect(rect: CGRect) {
+    override public func drawRect(rect: CGRect) {
         super.drawRect(rect)
         
         if (self.runningWithinInterfaceBuilder) {
@@ -107,7 +106,7 @@ class DTIActivityIndicatorView: UIView {
         }
     }
     
-    override func sizeThatFits(size: CGSize) -> CGSize {
+    override public func sizeThatFits(size: CGSize) -> CGSize {
         if (size.width < 20.0) {
             return CGSize(width: 20.0, height: 20.0)
         }
@@ -116,7 +115,7 @@ class DTIActivityIndicatorView: UIView {
     }
     
     /** public members */
-    func startActivity() {
+    public func startActivity() {
         if (self.activityStarted) {
             return
         }
@@ -129,7 +128,7 @@ class DTIActivityIndicatorView: UIView {
         currentAnimation!.startActivity()
     }
 
-    func stopActivity(animated: Bool) {
+    public func stopActivity(animated: Bool) {
         if (!self.activityStarted) {
             return
         }
@@ -138,7 +137,7 @@ class DTIActivityIndicatorView: UIView {
         currentAnimation!.stopActivity(animated)
     }
 
-    func stopActivity() {
+    public func stopActivity() {
         self.stopActivity(true)
     }
     

@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25FC0C7A1A04318500F61053 /* DTIActivityIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 25FC0C791A04318500F61053 /* DTIActivityIndicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25871B6B1A0454B60081B01D /* DTIActivityIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 25FC0C921A0432B400F61053 /* DTIActivityIndicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		25FC0C801A04318500F61053 /* DTIActivityIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FC0C741A04318500F61053 /* DTIActivityIndicator.framework */; };
-		25FC0C871A04318500F61053 /* DTIActivityIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FC0C861A04318500F61053 /* DTIActivityIndicatorTests.swift */; };
+		25FC0C9F1A0432B400F61053 /* CALayer+DTI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FC0C911A0432B400F61053 /* CALayer+DTI.swift */; };
+		25FC0CA11A0432B400F61053 /* DTIActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FC0C931A0432B400F61053 /* DTIActivityIndicatorView.swift */; };
+		25FC0CA21A0432B400F61053 /* DTIAnimChasingDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FC0C941A0432B400F61053 /* DTIAnimChasingDots.swift */; };
+		25FC0CA31A0432B400F61053 /* DTIAnimDoubleBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FC0C951A0432B400F61053 /* DTIAnimDoubleBounce.swift */; };
+		25FC0CA41A0432B400F61053 /* DTIAnimProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FC0C961A0432B400F61053 /* DTIAnimProtocol.swift */; };
+		25FC0CA51A0432B400F61053 /* DTIAnimPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FC0C971A0432B400F61053 /* DTIAnimPulse.swift */; };
+		25FC0CA61A0432B400F61053 /* DTIAnimRotatingPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FC0C981A0432B400F61053 /* DTIAnimRotatingPlane.swift */; };
+		25FC0CA71A0432B400F61053 /* DTIAnimSpotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FC0C991A0432B400F61053 /* DTIAnimSpotify.swift */; };
+		25FC0CA81A0432B400F61053 /* DTIAnimWanderingCubes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FC0C9A1A0432B400F61053 /* DTIAnimWanderingCubes.swift */; };
+		25FC0CA91A0432B400F61053 /* DTIAnimWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FC0C9B1A0432B400F61053 /* DTIAnimWave.swift */; };
+		25FC0CAA1A0432B400F61053 /* DTIAnimWp8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FC0C9C1A0432B400F61053 /* DTIAnimWp8.swift */; };
+		25FC0CAB1A0432B400F61053 /* DTIIndicatorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FC0C9D1A0432B400F61053 /* DTIIndicatorStyle.swift */; };
+		25FC0CB01A0432C900F61053 /* DTIActivityIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FC0CAE1A0432C900F61053 /* DTIActivityIndicatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +36,23 @@
 
 /* Begin PBXFileReference section */
 		25FC0C741A04318500F61053 /* DTIActivityIndicator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DTIActivityIndicator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		25FC0C781A04318500F61053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25FC0C791A04318500F61053 /* DTIActivityIndicator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTIActivityIndicator.h; sourceTree = "<group>"; };
 		25FC0C7F1A04318500F61053 /* DTIActivityIndicatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DTIActivityIndicatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		25FC0C851A04318500F61053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25FC0C861A04318500F61053 /* DTIActivityIndicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTIActivityIndicatorTests.swift; sourceTree = "<group>"; };
+		25FC0C911A0432B400F61053 /* CALayer+DTI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+DTI.swift"; sourceTree = "<group>"; };
+		25FC0C921A0432B400F61053 /* DTIActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTIActivityIndicator.h; sourceTree = "<group>"; };
+		25FC0C931A0432B400F61053 /* DTIActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTIActivityIndicatorView.swift; sourceTree = "<group>"; };
+		25FC0C941A0432B400F61053 /* DTIAnimChasingDots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTIAnimChasingDots.swift; sourceTree = "<group>"; };
+		25FC0C951A0432B400F61053 /* DTIAnimDoubleBounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTIAnimDoubleBounce.swift; sourceTree = "<group>"; };
+		25FC0C961A0432B400F61053 /* DTIAnimProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTIAnimProtocol.swift; sourceTree = "<group>"; };
+		25FC0C971A0432B400F61053 /* DTIAnimPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTIAnimPulse.swift; sourceTree = "<group>"; };
+		25FC0C981A0432B400F61053 /* DTIAnimRotatingPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTIAnimRotatingPlane.swift; sourceTree = "<group>"; };
+		25FC0C991A0432B400F61053 /* DTIAnimSpotify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTIAnimSpotify.swift; sourceTree = "<group>"; };
+		25FC0C9A1A0432B400F61053 /* DTIAnimWanderingCubes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTIAnimWanderingCubes.swift; sourceTree = "<group>"; };
+		25FC0C9B1A0432B400F61053 /* DTIAnimWave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTIAnimWave.swift; sourceTree = "<group>"; };
+		25FC0C9C1A0432B400F61053 /* DTIAnimWp8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTIAnimWp8.swift; sourceTree = "<group>"; };
+		25FC0C9D1A0432B400F61053 /* DTIIndicatorStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTIIndicatorStyle.swift; sourceTree = "<group>"; };
+		25FC0C9E1A0432B400F61053 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25FC0CAE1A0432C900F61053 /* DTIActivityIndicatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTIActivityIndicatorTests.swift; sourceTree = "<group>"; };
+		25FC0CAF1A0432C900F61053 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +77,8 @@
 		25FC0C6A1A04318500F61053 = {
 			isa = PBXGroup;
 			children = (
-				25FC0C761A04318500F61053 /* DTIActivityIndicator */,
-				25FC0C831A04318500F61053 /* DTIActivityIndicatorTests */,
+				25FC0C901A0432B400F61053 /* Source */,
+				25FC0CAD1A0432C900F61053 /* Tests */,
 				25FC0C751A04318500F61053 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,36 +92,48 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		25FC0C761A04318500F61053 /* DTIActivityIndicator */ = {
+		25FC0C901A0432B400F61053 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				25FC0C791A04318500F61053 /* DTIActivityIndicator.h */,
-				25FC0C771A04318500F61053 /* Supporting Files */,
+				25FC0C911A0432B400F61053 /* CALayer+DTI.swift */,
+				25FC0C921A0432B400F61053 /* DTIActivityIndicator.h */,
+				25FC0C931A0432B400F61053 /* DTIActivityIndicatorView.swift */,
+				25FC0C941A0432B400F61053 /* DTIAnimChasingDots.swift */,
+				25FC0C951A0432B400F61053 /* DTIAnimDoubleBounce.swift */,
+				25FC0C961A0432B400F61053 /* DTIAnimProtocol.swift */,
+				25FC0C971A0432B400F61053 /* DTIAnimPulse.swift */,
+				25FC0C981A0432B400F61053 /* DTIAnimRotatingPlane.swift */,
+				25FC0C991A0432B400F61053 /* DTIAnimSpotify.swift */,
+				25FC0C9A1A0432B400F61053 /* DTIAnimWanderingCubes.swift */,
+				25FC0C9B1A0432B400F61053 /* DTIAnimWave.swift */,
+				25FC0C9C1A0432B400F61053 /* DTIAnimWp8.swift */,
+				25FC0C9D1A0432B400F61053 /* DTIIndicatorStyle.swift */,
+				25FC0CB21A0432FA00F61053 /* Supporting Files */,
 			);
-			path = DTIActivityIndicator;
+			path = Source;
 			sourceTree = "<group>";
 		};
-		25FC0C771A04318500F61053 /* Supporting Files */ = {
+		25FC0CAD1A0432C900F61053 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				25FC0C781A04318500F61053 /* Info.plist */,
+				25FC0CB31A04331300F61053 /* Supporting Files */,
+				25FC0CAE1A0432C900F61053 /* DTIActivityIndicatorTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		25FC0CB21A0432FA00F61053 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25FC0C9E1A0432B400F61053 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		25FC0C831A04318500F61053 /* DTIActivityIndicatorTests */ = {
+		25FC0CB31A04331300F61053 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				25FC0C861A04318500F61053 /* DTIActivityIndicatorTests.swift */,
-				25FC0C841A04318500F61053 /* Supporting Files */,
-			);
-			path = DTIActivityIndicatorTests;
-			sourceTree = "<group>";
-		};
-		25FC0C841A04318500F61053 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				25FC0C851A04318500F61053 /* Info.plist */,
+				25FC0CAF1A0432C900F61053 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -109,7 +145,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25FC0C7A1A04318500F61053 /* DTIActivityIndicator.h in Headers */,
+				25871B6B1A0454B60081B01D /* DTIActivityIndicator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +211,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 25FC0C6A1A04318500F61053;
 			productRefGroup = 25FC0C751A04318500F61053 /* Products */;
@@ -209,6 +246,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25FC0CA51A0432B400F61053 /* DTIAnimPulse.swift in Sources */,
+				25FC0CA21A0432B400F61053 /* DTIAnimChasingDots.swift in Sources */,
+				25FC0CAA1A0432B400F61053 /* DTIAnimWp8.swift in Sources */,
+				25FC0CA81A0432B400F61053 /* DTIAnimWanderingCubes.swift in Sources */,
+				25FC0CA41A0432B400F61053 /* DTIAnimProtocol.swift in Sources */,
+				25FC0CAB1A0432B400F61053 /* DTIIndicatorStyle.swift in Sources */,
+				25FC0CA71A0432B400F61053 /* DTIAnimSpotify.swift in Sources */,
+				25FC0CA91A0432B400F61053 /* DTIAnimWave.swift in Sources */,
+				25FC0CA31A0432B400F61053 /* DTIAnimDoubleBounce.swift in Sources */,
+				25FC0C9F1A0432B400F61053 /* CALayer+DTI.swift in Sources */,
+				25FC0CA61A0432B400F61053 /* DTIAnimRotatingPlane.swift in Sources */,
+				25FC0CA11A0432B400F61053 /* DTIActivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25FC0C871A04318500F61053 /* DTIActivityIndicatorTests.swift in Sources */,
+				25FC0CB01A0432C900F61053 /* DTIActivityIndicatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +372,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = DTIActivityIndicator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -338,7 +387,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = DTIActivityIndicator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,7 +406,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = DTIActivityIndicatorTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -370,7 +419,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = DTIActivityIndicatorTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -395,6 +444,7 @@
 				25FC0C8C1A04318500F61053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		25FC0C8D1A04318500F61053 /* Build configuration list for PBXNativeTarget "DTIActivityIndicatorTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +453,7 @@
 				25FC0C8F1A04318500F61053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
