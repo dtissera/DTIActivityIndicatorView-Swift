@@ -40,8 +40,8 @@ class DTIAnimWp8: DTIAnimProtocol {
         let ballSize = CGFloat(self.owner.bounds.width / 9)
         
         for var index = 0; index < ballCount; ++index {
-            let layer = self.spinnerView.layer.sublayers[index] as CALayer
-            let layerBall = layer.sublayers[0] as CALayer
+            let layer = self.spinnerView.layer.sublayers[index] as! CALayer
+            let layerBall = layer.sublayers[0] as! CALayer
             
             layer.frame = self.owner.bounds
             layerBall.frame = CGRect(x: ballSize, y: ballSize, width: ballSize, height: ballSize)
@@ -55,8 +55,8 @@ class DTIAnimWp8: DTIAnimProtocol {
         // self.spinnerView.backgroundColor = UIColor.grayColor()
         
         for item in self.spinnerView.layer.sublayers {
-            let layer = item as CALayer
-            let layerBall = layer.sublayers[0] as CALayer
+            let layer = item as! CALayer
+            let layerBall = layer.sublayers[0] as! CALayer
             
             //layer.backgroundColor = UIColor.grayColor().CGColor
             layerBall.backgroundColor = self.owner.indicatorColor.CGColor
@@ -73,7 +73,7 @@ class DTIAnimWp8: DTIAnimProtocol {
         let beginTime = CACurrentMediaTime();
         let delays = [CFTimeInterval(1.56), CFTimeInterval(0.31), CFTimeInterval(0.62), CFTimeInterval(0.94), CFTimeInterval(1.25)]
         for var index = 0; index < ballCount; ++index {
-            let layer = self.spinnerView.layer.sublayers[index] as CALayer
+            let layer = self.spinnerView.layer.sublayers[index] as! CALayer
             
             let anim = CAKeyframeAnimation(keyPath: "transform.rotation.z")
             anim.duration = self.animationDuration
@@ -123,7 +123,7 @@ class DTIAnimWp8: DTIAnimProtocol {
             self.spinnerView.layer.removeAllAnimations()
 
             for var index = 0; index < ballCount; ++index {
-                let layer = self.spinnerView.layer.sublayers[index] as CALayer
+                let layer = self.spinnerView.layer.sublayers[index] as! CALayer
                 layer.removeAllAnimations()
             }
             
