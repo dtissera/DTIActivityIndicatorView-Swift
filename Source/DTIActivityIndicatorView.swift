@@ -97,9 +97,13 @@ public class DTIActivityIndicatorView: UIView {
             let context = UIGraphicsGetCurrentContext()
             CGContextSaveGState(context)
             
+            var arrayOfDashLength: [CGFloat] = [2.0, 2.0]
             CGContextSetStrokeColorWithColor(context, self.indicatorColor.CGColor)
-            let dashLengths:[CGFloat] = [2.0, 2.0]
-            CGContextSetLineDash(context, 0.0, dashLengths, UInt(dashLengths.count))
+            var dash = { (phase: CGFloat, lengths: UnsafePointer<CGFloat>, count: Int) -> Void in
+                CGContextSetLineDash(context, phase, lengths, count)
+            }
+            dash(0.0, arrayOfDashLength, arrayOfDashLength.count)
+            
             CGContextStrokeRect(context, self.bounds)
             
             CGContextRestoreGState(context)
