@@ -8,26 +8,26 @@
 
 import Foundation
 
-enum DTIIndicatorStyle: Int {
+public enum DTIIndicatorStyle: Int {
     case rotatingPane, doubleBounce, wave, wanderingCubes, chasingDots, pulse, spotify, wp8
     
-    static let defaultValue = DTIIndicatorStyle.chasingDots
+    public static let defaultValue = DTIIndicatorStyle.chasingDots
     
-    static func conv(value: String) -> DTIIndicatorStyle {
+    public static func conv(value: String) -> DTIIndicatorStyle {
         switch value {
-        case "rotatingPane": return .rotatingPane
-        case "doubleBounce": return .doubleBounce
-        case "wave": return .wave
-        case "wanderingCubes": return .wanderingCubes
-        case "chasingDots": return .chasingDots
-        case "pulse": return .pulse
-        case "spotify": return .spotify
-        case "wp8": return .wp8
-        default: return defaultValue
+            case "rotatingPane": return .rotatingPane
+            case "doubleBounce": return .doubleBounce
+            case "wave": return .wave
+            case "wanderingCubes": return .wanderingCubes
+            case "chasingDots": return .chasingDots
+            case "pulse": return .pulse
+            case "spotify": return .spotify
+            case "wp8": return .wp8
+            default: return defaultValue
         }
     }
     
-    static func convInv(value: DTIIndicatorStyle) -> String {
+    public static func convInv(value: DTIIndicatorStyle) -> String {
         switch value {
             case .rotatingPane: return "rotatingPane"
             case .doubleBounce: return "doubleBounce"
@@ -55,15 +55,15 @@ extension DTIIndicatorStyle {
 */
 extension DTIIndicatorStyle : StringLiteralConvertible {
     
-    init(stringLiteral v : String) {
+    public init(stringLiteral v : String) {
         self = DTIIndicatorStyle.conv(v)
     }
     
-    init(unicodeScalarLiteral v : String) {
+    public init(unicodeScalarLiteral v : String) {
         self = DTIIndicatorStyle.conv(v)
     }
     
-    init(extendedGraphemeClusterLiteral v: String) {
+    public init(extendedGraphemeClusterLiteral v: String) {
         self = DTIIndicatorStyle.conv(v)
     }
     
