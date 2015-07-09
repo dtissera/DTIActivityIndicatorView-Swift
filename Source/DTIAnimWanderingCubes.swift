@@ -36,7 +36,7 @@ class DTIAnimWanderingCubes: DTIAnimProtocol {
         let cubeSize = CGFloat(floor(self.owner.bounds.width / 3.5))
         
         for var index = 0; index < cubeCount; ++index {
-            let layer = self.spinnerView.layer.sublayers[index] as! CALayer
+            let layer = self.spinnerView.layer.sublayers![index] as CALayer
             
             layer.frame = CGRect(x: 0.0, y: 0.0, width: cubeSize, height: cubeSize)
         }
@@ -47,7 +47,7 @@ class DTIAnimWanderingCubes: DTIAnimProtocol {
         // self.spinnerView.backgroundColor = UIColor.grayColor()
         
         for var index = 0; index < cubeCount; ++index {
-            let cubeLayer = self.spinnerView.layer.sublayers[index] as! CALayer
+            let cubeLayer = self.spinnerView.layer.sublayers![index] as CALayer
             cubeLayer.backgroundColor = self.owner.indicatorColor.CGColor
         }
     }
@@ -62,7 +62,7 @@ class DTIAnimWanderingCubes: DTIAnimProtocol {
         
         let beginTime = CACurrentMediaTime();
         for var index = 0; index < cubeCount; ++index {
-            let cubeLayer = self.spinnerView.layer.sublayers[index] as! CALayer
+            let cubeLayer = self.spinnerView.layer.sublayers![index] as CALayer
             let translation = self.spinnerView.bounds.size.width-cubeLayer.bounds.size.width
             
             let aniTransform = CAKeyframeAnimation(keyPath: "transform")
@@ -79,7 +79,7 @@ class DTIAnimWanderingCubes: DTIAnimProtocol {
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             ]
             
-            var transform0 = CATransform3DIdentity;
+            let transform0 = CATransform3DIdentity;
             
             // -90°
             var transform1 = CATransform3DMakeTranslation(translation, 0.0, 0.0);
@@ -119,7 +119,7 @@ class DTIAnimWanderingCubes: DTIAnimProtocol {
             self.spinnerView.layer.removeAllAnimations()
             
             for var index = 0; index < cubeCount; ++index {
-                let layer = self.spinnerView.layer.sublayers[index] as! CALayer
+                let layer = self.spinnerView.layer.sublayers![index] as CALayer
                 layer.removeAllAnimations()
             }
             

@@ -28,7 +28,6 @@ class DTIAnimPulse: DTIAnimProtocol {
     func needLayoutSubviews() {
         self.spinnerView.frame = self.owner.bounds
         
-        let contentSize = self.owner.bounds.size
         let pulseViewSize = CGRectInset(self.owner.bounds, 2.0, 2.0).size
         
         self.pulseView.frame = CGRectMake(0.0, 0.0, pulseViewSize.width, pulseViewSize.height)

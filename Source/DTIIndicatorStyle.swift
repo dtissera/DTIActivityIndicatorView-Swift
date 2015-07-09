@@ -29,15 +29,14 @@ enum DTIIndicatorStyle: Int {
     
     static func convInv(value: DTIIndicatorStyle) -> String {
         switch value {
-        case .rotatingPane: return "rotatingPane"
-        case .doubleBounce: return "doubleBounce"
-        case .wave: return "wave"
-        case .wanderingCubes: return "wanderingCubes"
-        case .chasingDots: return "chasingDots"
-        case .pulse: return "pulse"
-        case .spotify: return "spotify"
-        case .wp8: return "wp8"
-        default: return "?"
+            case .rotatingPane: return "rotatingPane"
+            case .doubleBounce: return "doubleBounce"
+            case .wave: return "wave"
+            case .wanderingCubes: return "wanderingCubes"
+            case .chasingDots: return "chasingDots"
+            case .pulse: return "pulse"
+            case .spotify: return "spotify"
+            case .wp8: return "wp8"
         }
     }
 }
