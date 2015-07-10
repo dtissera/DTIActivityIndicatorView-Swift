@@ -33,8 +33,6 @@ class DTIAnimRotatingPlane: DTIAnimProtocol {
     func needLayoutSubviews() {
         self.spinnerView.frame = self.owner.bounds
         
-        let contentSize = self.owner.bounds.size
-        let sz = contentSize.width*3/5
         self.planeView.frame = CGRectInset(self.owner.bounds, 2.0, 2.0);
     }
     
@@ -50,7 +48,7 @@ class DTIAnimRotatingPlane: DTIAnimProtocol {
     func startActivity() {
         self.owner.addSubview(self.spinnerView)
         
-        var anim = CAKeyframeAnimation()
+        let anim = CAKeyframeAnimation()
         anim.keyPath = "transform"
         anim.removedOnCompletion = false
         anim.repeatCount = HUGE

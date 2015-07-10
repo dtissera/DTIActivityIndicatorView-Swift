@@ -40,7 +40,7 @@ public class DTIActivityIndicatorView: UIView {
         super.init(frame: frame);
     }
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -99,7 +99,7 @@ public class DTIActivityIndicatorView: UIView {
             
             var arrayOfDashLength: [CGFloat] = [2.0, 2.0]
             CGContextSetStrokeColorWithColor(context, self.indicatorColor.CGColor)
-            var dash = { (phase: CGFloat, lengths: UnsafePointer<CGFloat>, count: Int) -> Void in
+            let dash = { (phase: CGFloat, lengths: UnsafePointer<CGFloat>, count: Int) -> Void in
                 CGContextSetLineDash(context, phase, lengths, count)
             }
             dash(0.0, arrayOfDashLength, arrayOfDashLength.count)
