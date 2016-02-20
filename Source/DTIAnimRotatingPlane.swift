@@ -1,30 +1,32 @@
 //
-//  DTIAnimRotatingPlane.swift
-//  SampleApplication
+//  DTIAnimSpotify.swift
+//  SampleObjc
 //
-//  Created by dtissera on 15/08/2014.
+//  Created by dtissera on 16/08/2014.
 //  Copyright (c) 2014 o--O--o. All rights reserved.
 //
 
 import UIKit
 import QuartzCore
 
-class DTIAnimRotatingPlane: DTIAnimProtocol {
+class DTIAnimSpotify: DTIAnimProtocol {
     /** private properties */
     private let owner: DTIActivityIndicatorView
     
     private let spinnerView = UIView()
-    private let planeView = UIView()
+    private let circleView = UIView()
+    private let animationDuration = CFTimeInterval(1.2)
+    private let circleCount = 3
     
     /** ctor */
     init(indicatorView: DTIActivityIndicatorView) {
         self.owner = indicatorView
-    }
-    
-    func transformPlane(perspective:CGFloat, angle:CGFloat, x:CGFloat, y:CGFloat, z:CGFloat) -> CATransform3D {
-        var transform: CATransform3D = CATransform3DIdentity
-        transform.m34 = perspective
-        return CATransform3DRotate(transform, angle, x, y, z)
+        
+        for var index = 0; index < circleCount; ++index {
+            let layer = CALayer()
+            
+            self.circleView.layer.addSublayer(layer)
+        }
     }
     
     // -------------------------------------------------------------------------
@@ -32,44 +34,71 @@ class DTIAnimRotatingPlane: DTIAnimProtocol {
     // -------------------------------------------------------------------------
     func needLayoutSubviews() {
         self.spinnerView.frame = self.owner.bounds
-        self.planeView.frame = CGRectInset(self.owner.bounds, 2.0, 2.0);
+        
+        let contentSize = self.owner.bounds.size
+        let circleWidth: CGFloat = contentSize.width / CGFloat(circleCount*2+1)
+        let posY: CGFloat = (contentSize.height-circleWidth)/2
+        
+        self.circleView.frame = self.owner.bounds
+        // self.spinnerView.layer.cornerRadius = circleWidth/2
+        
+        for var index = 0; index < circleCount; ++index {
+            let circleLayer = self.circleView.layer.sublayers![index]
+            circleLayer.frame = CGRect(x: circleWidth+CGFloat(index)*(circleWidth*2), y: posY, width: circleWidth, height: circleWidth)
+            
+            circleLayer.cornerRadius = circleWidth/2
+            //circleLayer.transform = CATransform3DMakeScale(2.0, 2.0, 0.0);
+        }
     }
     
     func needUpdateColor() {
-        self.planeView.backgroundColor = self.owner.indicatorColor
-    }
+        // Debug stuff
+        // self.spinnerView.backgroundColor = UIColor.grayColor()
 
+        for var index = 0; index < circleCount; ++index {
+            let circleLayer = self.circleView.layer.sublayers![index] 
+            circleLayer.backgroundColor = self.owner.indicatorColor.CGColor
+        }
+    }
+    
     func setUp() {
-        self.spinnerView.addSubview(self.planeView)
+        self.spinnerView.addSubview(self.circleView)
         //self.spinnerView.layer.shouldRasterize = true
     }
-
+    
     func startActivity() {
         self.owner.addSubview(self.spinnerView)
-        
-        let anim = CAKeyframeAnimation()
-        anim.keyPath = "transform"
-        anim.removedOnCompletion = false
-        anim.repeatCount = HUGE
-        anim.duration = 1.2
-        anim.keyTimes = [0.0, 0.45, 0.95]
-        anim.timingFunctions = [
-            CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
-            CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
-            CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        ]
-        anim.values = [
-            NSValue(CATransform3D: self.transformPlane(1.0/120.0, angle: 0.0, x: 0.0, y: 0.0, z: 0.0)),
-            NSValue(CATransform3D: self.transformPlane(1.0/120.0, angle: CGFloat(M_PI), x: 0.0, y: 1.0, z: 0.0)),
-            NSValue(CATransform3D: self.transformPlane(1.0/120.0, angle: CGFloat(M_PI), x: 0.0, y: 0.0, z: 1.0))
-        ]
-        
-        self.spinnerView.layer.addAnimation(anim, forKey: "DTIAnimRotatingPlane~animateCanvas")
+
+        let beginTime = CACurrentMediaTime() + self.animationDuration;
+        for var index = 0; index < circleCount; ++index {
+            let circleLayer = self.circleView.layer.sublayers![index]
+            
+            let aniScale = CAKeyframeAnimation()
+            aniScale.keyPath = "transform.scale"
+            aniScale.values = [1.0, 1.7, 1.0, 1.0]
+            aniScale.removedOnCompletion = false
+            aniScale.repeatCount = HUGE
+            aniScale.beginTime = beginTime - self.animationDuration + CFTimeInterval(index) * 0.2;
+            aniScale.keyTimes = [0.0, 0.2, 0.4, 1.0];
+            aniScale.timingFunctions = [
+                CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
+                CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
+                CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
+                CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            ]
+            aniScale.duration = self.animationDuration
+            
+            circleLayer.addAnimation(aniScale, forKey: "DTIAnimSpotify~scale")
+        }
     }
     
     func stopActivity(animated: Bool) {
         func removeAnimations() {
             self.spinnerView.layer.removeAllAnimations()
+            for var index = 0; index < circleCount; ++index {
+                let circleLayer = self.circleView.layer.sublayers![index]
+                circleLayer.removeAllAnimations()
+            }
             
             self.spinnerView.removeFromSuperview()
         }
