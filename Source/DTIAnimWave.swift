@@ -42,7 +42,7 @@ class DTIAnimWave: DTIAnimProtocol {
         self.rectView.frame = self.owner.bounds;
 
         for var index = 0; index < rectCount; ++index {
-            let rectLayer = self.rectView.layer.sublayers[index] as! CALayer
+            let rectLayer = self.rectView.layer.sublayers![index]
             rectLayer.frame = CGRect(x: CGFloat(index)*(rectWidth+spaceBetweenRect), y: 0.0, width: rectWidth, height: contentSize.height)
         }
     }
@@ -52,7 +52,7 @@ class DTIAnimWave: DTIAnimProtocol {
         // self.spinnerView.backgroundColor = UIColor.grayColor()
         
         for var index = 0; index < rectCount; ++index {
-            let rectLayer = self.rectView.layer.sublayers[index] as! CALayer
+            let rectLayer = self.rectView.layer.sublayers![index]
             rectLayer.backgroundColor = self.owner.indicatorColor.CGColor
         }
     }
@@ -67,7 +67,7 @@ class DTIAnimWave: DTIAnimProtocol {
         
         let beginTime = CACurrentMediaTime() + self.animationDuration;
         for var index = 0; index < rectCount; ++index {
-            let rectLayer = self.rectView.layer.sublayers[index]as! CALayer
+            let rectLayer = self.rectView.layer.sublayers![index]
 
             let aniScale = CAKeyframeAnimation()
             aniScale.keyPath = "transform"
@@ -97,7 +97,7 @@ class DTIAnimWave: DTIAnimProtocol {
         func removeAnimations() {
             self.spinnerView.layer.removeAllAnimations()
             for var index = 0; index < rectCount; ++index {
-                let rectLayer = self.rectView.layer.sublayers[index] as! CALayer
+                let rectLayer = self.rectView.layer.sublayers![index]
                 rectLayer.removeAllAnimations()
             }
             
