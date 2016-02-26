@@ -29,7 +29,7 @@ class DTIAnimDoubleBounce: DTIAnimProtocol {
     func needLayoutSubviews() {
         self.spinnerView.frame = self.owner.bounds
         
-        let contentSize = self.owner.bounds.size
+        _ = self.owner.bounds.size
         let doubleBounceSize = CGRectInset(self.owner.bounds, 2.0, 2.0).size
 
         self.doubleBounce1View.frame = CGRectMake(0.0, 0.0, doubleBounceSize.width, doubleBounceSize.height)
@@ -73,7 +73,7 @@ class DTIAnimDoubleBounce: DTIAnimProtocol {
         ]
         aniScale1.duration = self.animationDuration
         
-        var aniScale2 = CAKeyframeAnimation()
+        let aniScale2 = CAKeyframeAnimation()
         aniScale2.keyPath = "transform.scale"
         aniScale2.values = [0, 1, 0]
         aniScale2.removedOnCompletion = false

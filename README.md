@@ -6,6 +6,7 @@ Written in Swift.
 
 - DTIActivityIndicatorView can be called from both swift or objc project.
 - This component require **Xcode6.1** to compile.
+- Added support for Swift 2
 
 <img src="Shots/rotatingplane.gif"/> &nbsp; 
 <img src="Shots/doublebounce.gif"/> &nbsp;
