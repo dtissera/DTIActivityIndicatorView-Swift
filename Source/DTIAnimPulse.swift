@@ -28,10 +28,9 @@ class DTIAnimPulse: DTIAnimProtocol {
     func needLayoutSubviews() {
         self.spinnerView.frame = self.owner.bounds
         
-        let contentSize = self.owner.bounds.size
-        let pulseViewSize = CGRectInset(self.owner.bounds, 2.0, 2.0).size
+        let pulseViewSize = self.owner.bounds.insetBy(dx: 2.0, dy: 2.0).size
         
-        self.pulseView.frame = CGRectMake(0.0, 0.0, pulseViewSize.width, pulseViewSize.height)
+        self.pulseView.frame = CGRect(x: 0.0, y: 0.0, width: pulseViewSize.width, height: pulseViewSize.height)
         
         let sz = pulseViewSize.width
         
@@ -62,16 +61,16 @@ class DTIAnimPulse: DTIAnimProtocol {
         aniOpacity.values = [1.0, 0.0]
 
         let aniPulseGroup = CAAnimationGroup();
-        aniPulseGroup.removedOnCompletion = false
+        aniPulseGroup.isRemovedOnCompletion = false
         aniPulseGroup.repeatCount = HUGE
         aniPulseGroup.duration = self.animationDuration;
         aniPulseGroup.animations = [aniScale, aniOpacity];
         aniPulseGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut);
         
-        self.pulseView.layer.addAnimation(aniPulseGroup, forKey: "DTIAnimPulse~pulse")
+        self.pulseView.layer.add(aniPulseGroup, forKey: "DTIAnimPulse~pulse")
     }
     
-    func stopActivity(animated: Bool) {
+    func stopActivity(_ animated: Bool) {
         func removeAnimations() {
             self.spinnerView.layer.removeAllAnimations()
             self.pulseView.layer.removeAllAnimations()

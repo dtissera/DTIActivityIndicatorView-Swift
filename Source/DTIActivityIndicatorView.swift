@@ -25,7 +25,7 @@ public class DTIActivityIndicatorView: UIView {
     private var currentAnimation: DTIAnimProtocol? = nil
     
     /** @IBInspectable properties */
-    @IBInspectable public var indicatorColor: UIColor = UIColor.whiteColor() {
+    @IBInspectable public var indicatorColor: UIColor = UIColor.white() {
         didSet {
             if (self.currentAnimation != nil) {
                 self.currentAnimation!.needUpdateColor()
@@ -40,7 +40,7 @@ public class DTIActivityIndicatorView: UIView {
         super.init(frame: frame);
     }
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -69,7 +69,7 @@ public class DTIActivityIndicatorView: UIView {
     }
     
     private func setUpColors() {
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear()
         
         if (self.currentAnimation != nil) {
             self.currentAnimation!.needUpdateColor()
@@ -90,27 +90,27 @@ public class DTIActivityIndicatorView: UIView {
         }
     }
 
-    override public func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    override public func draw(_ rect: CGRect) {
+        super.draw(rect)
         
         if (self.runningWithinInterfaceBuilder) {
             let context = UIGraphicsGetCurrentContext()
-            CGContextSaveGState(context)
+            context?.saveGState()
             
-            var arrayOfDashLength: [CGFloat] = [2.0, 2.0]
-            CGContextSetStrokeColorWithColor(context, self.indicatorColor.CGColor)
-            var dash = { (phase: CGFloat, lengths: UnsafePointer<CGFloat>, count: Int) -> Void in
-                CGContextSetLineDash(context, phase, lengths, count)
+            let arrayOfDashLength: [CGFloat] = [2.0, 2.0]
+            context?.setStrokeColor(self.indicatorColor.cgColor)
+            let dash = { (phase: CGFloat, lengths: UnsafePointer<CGFloat>, count: Int) -> Void in
+                context?.setLineDash(phase: phase, lengths: lengths, count: count)
             }
             dash(0.0, arrayOfDashLength, arrayOfDashLength.count)
             
-            CGContextStrokeRect(context, self.bounds)
+            context?.stroke(self.bounds)
             
-            CGContextRestoreGState(context)
+            context?.restoreGState()
         }
     }
     
-    override public func sizeThatFits(size: CGSize) -> CGSize {
+    override public func sizeThatFits(_ size: CGSize) -> CGSize {
         if (size.width < 20.0) {
             return CGSize(width: 20.0, height: 20.0)
         }
@@ -132,7 +132,7 @@ public class DTIActivityIndicatorView: UIView {
         currentAnimation!.startActivity()
     }
 
-    public func stopActivity(animated: Bool) {
+    public func stopActivity(_ animated: Bool) {
         if (!self.activityStarted) {
             return
         }
