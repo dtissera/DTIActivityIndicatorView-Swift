@@ -5,7 +5,7 @@ Animated custom ActivityIndicator inspired from css library SpinKit and much mor
 Written in Swift.
 
 - DTIActivityIndicatorView can be called from both swift or objc project.
-- This component require **Xcode6.1** to compile.
+- This component require **Xcode 8** to compile.
 
 <img src="Shots/rotatingplane.gif"/> &nbsp; 
 <img src="Shots/doublebounce.gif"/> &nbsp;
