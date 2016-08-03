@@ -25,7 +25,7 @@ public class DTIActivityIndicatorView: UIView {
     private var currentAnimation: DTIAnimProtocol? = nil
     
     /** @IBInspectable properties */
-    @IBInspectable public var indicatorColor: UIColor = UIColor.white() {
+    @IBInspectable public var indicatorColor: UIColor = UIColor.white {
         didSet {
             if (self.currentAnimation != nil) {
                 self.currentAnimation!.needUpdateColor()
@@ -69,7 +69,7 @@ public class DTIActivityIndicatorView: UIView {
     }
     
     private func setUpColors() {
-        self.backgroundColor = UIColor.clear()
+        self.backgroundColor = UIColor.clear
         
         if (self.currentAnimation != nil) {
             self.currentAnimation!.needUpdateColor()
