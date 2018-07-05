@@ -21,8 +21,7 @@ class DTIAnimSpotify: DTIAnimProtocol {
     /** ctor */
     init(indicatorView: DTIActivityIndicatorView) {
         self.owner = indicatorView
-        
-        for var index = 0; index < circleCount; ++index {
+        for _ in 0...circleCount {
             let layer = CALayer()
             
             self.circleView.layer.addSublayer(layer)
@@ -42,8 +41,8 @@ class DTIAnimSpotify: DTIAnimProtocol {
         self.circleView.frame = self.owner.bounds
         // self.spinnerView.layer.cornerRadius = circleWidth/2
         
-        for var index = 0; index < circleCount; ++index {
-            let circleLayer = self.circleView.layer.sublayers[index] as! CALayer
+        for index in 0...circleCount {
+            let circleLayer = self.circleView.layer.sublayers![index]
             circleLayer.frame = CGRect(x: circleWidth+CGFloat(index)*(circleWidth*2), y: posY, width: circleWidth, height: circleWidth)
             
             circleLayer.cornerRadius = circleWidth/2
@@ -55,9 +54,9 @@ class DTIAnimSpotify: DTIAnimProtocol {
         // Debug stuff
         // self.spinnerView.backgroundColor = UIColor.grayColor()
 
-        for var index = 0; index < circleCount; ++index {
-            let circleLayer = self.circleView.layer.sublayers[index] as! CALayer
-            circleLayer.backgroundColor = self.owner.indicatorColor.CGColor
+        for index in 0...circleCount {
+            let circleLayer = self.circleView.layer.sublayers![index]
+            circleLayer.backgroundColor = self.owner.indicatorColor.cgColor
         }
     }
     
@@ -70,13 +69,13 @@ class DTIAnimSpotify: DTIAnimProtocol {
         self.owner.addSubview(self.spinnerView)
 
         let beginTime = CACurrentMediaTime() + self.animationDuration;
-        for var index = 0; index < circleCount; ++index {
-            let circleLayer = self.circleView.layer.sublayers[index] as! CALayer
+        for index in 0...circleCount {
+            let circleLayer = self.circleView.layer.sublayers![index]
             
             let aniScale = CAKeyframeAnimation()
             aniScale.keyPath = "transform.scale"
             aniScale.values = [1.0, 1.7, 1.0, 1.0]
-            aniScale.removedOnCompletion = false
+            aniScale.isRemovedOnCompletion = false
             aniScale.repeatCount = HUGE
             aniScale.beginTime = beginTime - self.animationDuration + CFTimeInterval(index) * 0.2;
             aniScale.keyTimes = [0.0, 0.2, 0.4, 1.0];
@@ -88,15 +87,15 @@ class DTIAnimSpotify: DTIAnimProtocol {
             ]
             aniScale.duration = self.animationDuration
             
-            circleLayer.addAnimation(aniScale, forKey: "DTIAnimSpotify~scale")
+            circleLayer.add(aniScale, forKey: "DTIAnimSpotify~scale")
         }
     }
     
     func stopActivity(animated: Bool) {
         func removeAnimations() {
             self.spinnerView.layer.removeAllAnimations()
-            for var index = 0; index < circleCount; ++index {
-                let circleLayer = self.circleView.layer.sublayers[index] as! CALayer
+            for index in 0...circleCount {
+                let circleLayer = self.circleView.layer.sublayers![index]
                 circleLayer.removeAllAnimations()
             }
             
@@ -104,7 +103,9 @@ class DTIAnimSpotify: DTIAnimProtocol {
         }
         
         if (animated) {
-            self.spinnerView.layer.dismissAnimated(removeAnimations)
+            self.spinnerView.layer.dismissAnimated{
+                removeAnimations()
+            }
         }
         else {
             removeAnimations()

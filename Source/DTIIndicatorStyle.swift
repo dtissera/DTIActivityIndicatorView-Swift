@@ -54,26 +54,26 @@ extension DTIIndicatorStyle {
 /**
 * Allow to be constructed from string / assign string
 */
-extension DTIIndicatorStyle : StringLiteralConvertible {
+extension DTIIndicatorStyle : ExpressibleByStringLiteral {
     
     init(stringLiteral v : String) {
-        self = DTIIndicatorStyle.conv(v)
+        self = DTIIndicatorStyle.conv(value: v)
     }
     
     init(unicodeScalarLiteral v : String) {
-        self = DTIIndicatorStyle.conv(v)
+        self = DTIIndicatorStyle.conv(value: v)
     }
     
     init(extendedGraphemeClusterLiteral v: String) {
-        self = DTIIndicatorStyle.conv(v)
+        self = DTIIndicatorStyle.conv(value: v)
     }
     
     static func convertFromStringLiteral(value: String) -> DTIIndicatorStyle {
-        return conv(value)
+        return conv(value: value)
     }
     
     static func convertFromExtendedGraphemeClusterLiteral(value: String) -> DTIIndicatorStyle {
-        return conv(value)
+        return conv(value: value)
     }
 }
 

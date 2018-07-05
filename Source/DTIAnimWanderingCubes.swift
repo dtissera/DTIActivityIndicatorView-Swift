@@ -20,9 +20,8 @@ class DTIAnimWanderingCubes: DTIAnimProtocol {
     /** ctor */
     init(indicatorView: DTIActivityIndicatorView) {
         self.owner = indicatorView
-        for var index = 0; index < cubeCount; ++index {
+        for _ in 0...cubeCount {
             let cubeLayer = CALayer()
-            
             self.spinnerView.layer.addSublayer(cubeLayer)
         }
     }
@@ -35,20 +34,20 @@ class DTIAnimWanderingCubes: DTIAnimProtocol {
         
         let cubeSize = CGFloat(floor(self.owner.bounds.width / 3.5))
         
-        for var index = 0; index < cubeCount; ++index {
-            let layer = self.spinnerView.layer.sublayers[index] as! CALayer
-            
+        for  index in 0...cubeCount {
+            let layer = self.spinnerView.layer.sublayers![index]
             layer.frame = CGRect(x: 0.0, y: 0.0, width: cubeSize, height: cubeSize)
         }
+       
     }
     
     func needUpdateColor() {
         // Debug stuff
         // self.spinnerView.backgroundColor = UIColor.grayColor()
         
-        for var index = 0; index < cubeCount; ++index {
-            let cubeLayer = self.spinnerView.layer.sublayers[index] as! CALayer
-            cubeLayer.backgroundColor = self.owner.indicatorColor.CGColor
+        for  index in 0...cubeCount {
+            let cubeLayer = self.spinnerView.layer.sublayers![index]
+            cubeLayer.backgroundColor = self.owner.indicatorColor.cgColor
         }
     }
     
@@ -61,12 +60,12 @@ class DTIAnimWanderingCubes: DTIAnimProtocol {
         self.owner.addSubview(self.spinnerView)
         
         let beginTime = CACurrentMediaTime();
-        for var index = 0; index < cubeCount; ++index {
-            let cubeLayer = self.spinnerView.layer.sublayers[index] as! CALayer
+        for  index in 0...cubeCount {
+            let cubeLayer = self.spinnerView.layer.sublayers![index]
             let translation = self.spinnerView.bounds.size.width-cubeLayer.bounds.size.width
             
             let aniTransform = CAKeyframeAnimation(keyPath: "transform")
-            aniTransform.removedOnCompletion = false
+            aniTransform.isRemovedOnCompletion = false
             aniTransform.repeatCount = HUGE
             aniTransform.duration = self.animationDuration
             aniTransform.beginTime = beginTime - CFTimeInterval(CGFloat(index)*CGFloat(self.animationDuration)/CGFloat(cubeCount));
@@ -79,7 +78,7 @@ class DTIAnimWanderingCubes: DTIAnimProtocol {
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             ]
             
-            var transform0 = CATransform3DIdentity;
+            let transform0 = CATransform3DIdentity;
             
             // -90°
             var transform1 = CATransform3DMakeTranslation(translation, 0.0, 0.0);
@@ -101,16 +100,10 @@ class DTIAnimWanderingCubes: DTIAnimProtocol {
             transform4 = CATransform3DRotate(transform4, -CGFloat(2*M_PI), 0.0, 0.0, 1.0);
             transform4 = CATransform3DScale(transform4, 1.0, 1.0, 1.0);
             
-            aniTransform.values = [
-                NSValue(CATransform3D: transform0),
-                NSValue(CATransform3D: transform1),
-                NSValue(CATransform3D: transform2),
-                NSValue(CATransform3D: transform3),
-                NSValue(CATransform3D: transform4)
-            ]
+            aniTransform.values = [transform0,transform1,transform2,transform3,transform4]
             
             cubeLayer.shouldRasterize = true
-            cubeLayer.addAnimation(aniTransform, forKey: "DTIAnimWanderingCubes~transform\(index)")
+            cubeLayer.add(aniTransform, forKey: "DTIAnimWanderingCubes~transform\(index)")
         }
     }
     
@@ -118,8 +111,8 @@ class DTIAnimWanderingCubes: DTIAnimProtocol {
         func removeAnimations() {
             self.spinnerView.layer.removeAllAnimations()
             
-            for var index = 0; index < cubeCount; ++index {
-                let layer = self.spinnerView.layer.sublayers[index] as! CALayer
+            for  index in 0...cubeCount {
+                let layer = self.spinnerView.layer.sublayers![index]
                 layer.removeAllAnimations()
             }
             
@@ -127,7 +120,9 @@ class DTIAnimWanderingCubes: DTIAnimProtocol {
         }
         
         if (animated) {
-            self.spinnerView.layer.dismissAnimated(removeAnimations)
+            self.spinnerView.layer.dismissAnimated{
+                removeAnimations()
+            }
         }
         else {
             removeAnimations()

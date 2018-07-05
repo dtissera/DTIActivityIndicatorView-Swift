@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 
 extension CALayer {
-    func dismissAnimated(completionBlock: () -> Void) {
+    func dismissAnimated(completionBlock: @escaping () -> Void) {
         CATransaction.begin()
         CATransaction.setCompletionBlock { () -> Void in
             completionBlock()
@@ -24,13 +24,13 @@ extension CALayer {
         aniFade.toValue = 0.0
         
         let aniGroup = CAAnimationGroup();
-        aniGroup.removedOnCompletion = false
+        aniGroup.isRemovedOnCompletion = false
         aniGroup.animations = [aniScale, aniFade];
         aniGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         aniGroup.duration = CFTimeInterval(0.25)
         aniGroup.fillMode = kCAFillModeForwards
         
-        self.addAnimation(aniGroup, forKey: nil)
+        self.add(aniGroup, forKey: nil)
         CATransaction.commit()
     }
 }

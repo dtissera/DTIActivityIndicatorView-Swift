@@ -22,7 +22,7 @@ class DTIAnimWave: DTIAnimProtocol {
     /** ctor */
     init(indicatorView: DTIActivityIndicatorView) {
         self.owner = indicatorView
-        for var index = 0; index < rectCount; ++index {
+        for _ in 0...rectCount {
             let layer = CALayer()
             layer.transform = CATransform3DMakeScale(1.0, 0.4, 0.0);
             
@@ -41,8 +41,8 @@ class DTIAnimWave: DTIAnimProtocol {
         
         self.rectView.frame = self.owner.bounds;
 
-        for var index = 0; index < rectCount; ++index {
-            let rectLayer = self.rectView.layer.sublayers[index] as! CALayer
+        for index in 0...rectCount {
+            let rectLayer = self.rectView.layer.sublayers![index]
             rectLayer.frame = CGRect(x: CGFloat(index)*(rectWidth+spaceBetweenRect), y: 0.0, width: rectWidth, height: contentSize.height)
         }
     }
@@ -51,9 +51,9 @@ class DTIAnimWave: DTIAnimProtocol {
         // Debug stuff
         // self.spinnerView.backgroundColor = UIColor.grayColor()
         
-        for var index = 0; index < rectCount; ++index {
-            let rectLayer = self.rectView.layer.sublayers[index] as! CALayer
-            rectLayer.backgroundColor = self.owner.indicatorColor.CGColor
+        for index in 0...rectCount {
+            let rectLayer = self.rectView.layer.sublayers![index]
+            rectLayer.backgroundColor = self.owner.indicatorColor.cgColor
         }
     }
     
@@ -66,12 +66,12 @@ class DTIAnimWave: DTIAnimProtocol {
         self.owner.addSubview(self.spinnerView)
         
         let beginTime = CACurrentMediaTime() + self.animationDuration;
-        for var index = 0; index < rectCount; ++index {
-            let rectLayer = self.rectView.layer.sublayers[index]as! CALayer
+        for index in 0...rectCount {
+            let rectLayer = self.rectView.layer.sublayers![index]
 
             let aniScale = CAKeyframeAnimation()
             aniScale.keyPath = "transform"
-            aniScale.removedOnCompletion = false
+            aniScale.isRemovedOnCompletion = false
             aniScale.repeatCount = HUGE
             aniScale.duration = self.animationDuration
             aniScale.beginTime = beginTime - self.animationDuration + CFTimeInterval(index) * 0.1;
@@ -82,22 +82,18 @@ class DTIAnimWave: DTIAnimProtocol {
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             ]
-            aniScale.values = [
-                NSValue(CATransform3D: CATransform3DMakeScale(1.0, 0.4, 0.0)),
-                NSValue(CATransform3D: CATransform3DMakeScale(1.0, 1.0, 0.0)),
-                NSValue(CATransform3D: CATransform3DMakeScale(1.0, 0.4, 0.0)),
-                NSValue(CATransform3D: CATransform3DMakeScale(1.0, 0.4, 0.0))
+            aniScale.values = [CATransform3DMakeScale(1.0, 0.4, 0.0),CATransform3DMakeScale(1.0, 1.0, 0.0),CATransform3DMakeScale(1.0, 0.4, 0.0),CATransform3DMakeScale(1.0, 0.4, 0.0)
             ]
             
-            rectLayer.addAnimation(aniScale, forKey: "DTIAnimWave~scale\(index)")
+            rectLayer.add(aniScale, forKey: "DTIAnimWave~scale\(index)")
         }
     }
     
     func stopActivity(animated: Bool) {
         func removeAnimations() {
             self.spinnerView.layer.removeAllAnimations()
-            for var index = 0; index < rectCount; ++index {
-                let rectLayer = self.rectView.layer.sublayers[index] as! CALayer
+            for index in 0...rectCount {
+                let rectLayer = self.rectView.layer.sublayers![index]
                 rectLayer.removeAllAnimations()
             }
             
@@ -105,7 +101,9 @@ class DTIAnimWave: DTIAnimProtocol {
         }
         
         if (animated) {
-            self.spinnerView.layer.dismissAnimated(removeAnimations)
+            self.spinnerView.layer.dismissAnimated{
+                removeAnimations()
+            }
         }
         else {
             removeAnimations()
